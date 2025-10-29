@@ -1,0 +1,101 @@
+[
+  {
+    "DEVID": "4ba00477",
+    "DEVICENAME": "arm DAP",
+    "DATA": [],
+    "DATAINP": [],
+    "DATACTRL": [],
+    "ADDR": [],
+    "ADDRCTRL": [],
+    "RESET": -1,
+    "CSZ": -1,
+    "CSZCTRL": -1,
+    "RESETCTRL": -1,
+    "WEZ": -1,
+    "WEZCTRL": -1,
+    "OEZ": -1,
+    "OEZCTRL": -1,
+    "BSLEN": 0,
+    "IRLEN": 4,
+    "SAFE": 1,
+    "EXTEST": "0000",
+    "FLASHID": -1,
+    "FLASHTYPE": "NONE",
+    "OPTPINSNAME": [],
+    "OPTPINS": [],
+    "OPTPINSINP": [],
+    "OPTPINSCTRL": [],
+    "OPTPINSVAL": [],
+    "REVERSE": true
+  },
+  {
+    "DEVID": "23727093",
+    "DEVICENAME": "xc7z020",
+
+    "DATA": [],//345, 336, 318, 321, 216, 219, 300, 303 ],
+    "DATAINP": [],// 346, 337, 319, 322, 217, 220, 301, 304 ],
+    "DATACTRL": [],//344, 335, 317, 320, 215, 218, 299, 302 ],
+    "ADDR": [],//225, 222, 285, 282, 255, 252, 195, 192, 276, 279 ],
+    //"ADDRINP":  [ 226, 223, 286, 283, 256, 253, 196, 193, 277, 280],
+    "ADDRCTRL": [],// 224, 221, 284, 281, 254, 251, 194, 191, 275, 278 ],
+
+    "RESET": 474,
+    "RESETCTRL": 473,
+    "CSZ": 381,
+    "CSZCTRL": 380,
+    "WEZ": 555, //342,
+    "WEZCTRL": 554, //341,
+    "OEZ": 564, //351,
+    "OEZCTRL": 563, //350,
+    "BSLEN": 1077,
+    "IRLEN": 6,
+    "SAFE": 1,
+    "EXTEST": "100110",
+    "FLASHID": -1,
+    "FLASHTYPE": "PARALLEL",
+    "OPTPINSNAME": [ "SELECT", "LED_1", "LED_2", "LED_3", "SW0", "SW1", "BTN0", "BTN1", "BTN2", "BTN3", "LED4_R", "LED4_G", "LED4_B", "LED5_R", "LED5_G", "LED5_B" ],
+    "OPTPINS": [ 288, 291, 348, 339, 432, 435, 453, 450, 420, 423,351,381,342, 336,345,474], //output cell
+    "OPTPINSINP": [ 289, 292, 349, 340, 433, 436, 454, 451, 421, 424,352,382,343, 337,346,475 ], //input cell 
+    "OPTPINSCTRL": [ 287, 290, 347, 338, 431, 434, 452, 449, 419, 422,350,380,341, 335,344,473], //control cell
+    "OPTPINSVAL": [ 1, 1, 1, 0, -1, -1, -1, -1, -1, -1 ,1,1,1 ,1,1,1],
+    "REVERSE": true
+  }
+]
+
+//##################################################################################
+//#
+//# Parameters that need to be setup based on Chip BSDL file:
+//# =========================================================
+//# DEVID       = Device Id
+//# DEVICENAME  = Devie Name 
+//# DATA        = D0:D16 Boundary scan cell location for data pin connected to Flash device
+//# DATACTRL    = D0:D16 Boundary scan control cell location for data pin connected to Flash device 
+//# ADDR        = A0:A22 Boundary scan cell location for address pin connected to Flash device
+//# ADDRCTRL    = A0:A22 Boundary scan control cell location for address pin connected to Flash device
+//# RESET       = Boundary scan cell location of reset pin connected to Flash Device
+//# RESETCTRL   = Boundary scan control cell location of reset pin connected to Flash Device
+//# CSZ         = Boundary scan cell location of Chip Enable pin connected to Flash Device
+//# CSZCTRL     = Boundary scan control cell location of Ship Enable pin connected to Flash Device
+//# WEZ         = Boundary scan cell location of Write Enable pin connected to Flash Device
+//# WEZCTRL     = Boundary scan control cell location of Write Enable pin connected to Flash Device
+//# OEZ         = Boundary scan cell location of Output Enable pin connected to Flash Device
+//# OEZCTRL     = Boundary scan control cell location of Output Enable pin connected to Flash Device
+//# BSLEN       = Bounday scan register length
+//# IRLEN       = Instruction Register Length
+//# SAFE        = Save value for Boundar Scan control Cell
+//# EXTEST      = EXTEST instruction code for the device 
+//
+//# OPTPINSNAME = Functional name of optional pins to display in the Debug Control
+//# OPTPINS     = Boundary scan output cell location of optional pins, If pin doesn't have output cell then set correcponding field as -1
+//# OPTPINSINP  = Boundary scan input cell location of optional pins, If pin doesn't have input cell then set correcponding field as -1
+//#     Note:  In cose of bidirectional pins input/output cell value may be same i.e (OPTPINS and OPTPINSINP will be same)
+//# OPTPINSCTRL = Boundary scan control cell location of optional pins, If pin doesn't have control cell then set correcponding field as -1
+//# OPTPINSVAL  = Value of optional pins, sets intended purpose of pin
+//#         -1: Only Input Support
+//#          0: Both Input and Output Support
+//#          1: Only Output Support
+//# REVERSE     = true : if first BS cell (No 0) is connected to TDO and Last cell connected to TDI
+//#               false: if first BS cell (No 0) is connected to TDI and Last cell connected to TDO
+//##################################################################################
+
+
